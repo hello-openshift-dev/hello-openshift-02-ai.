@@ -17,7 +17,7 @@ public class KafkaEndpoint {
     @Inject
     AIService aiService;
 
-    @Incoming("greetings-verify")
+    @Incoming("greeting-submissions")
     @Outgoing("greetings-verified")
     public Uni<GreetingDTO> onGreeting(final GreetingDTO greetingDTOToVerify) {
 

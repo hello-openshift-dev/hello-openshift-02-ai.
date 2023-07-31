@@ -11,13 +11,11 @@ public class AIKafkaEndpointTestResource implements QuarkusTestResourceLifecycle
     @Override
     public Map<String, String> start() {
         Map<String, String> env = new HashMap<>();
-        Map<String, String> props1 = InMemoryConnector.switchIncomingChannelsToInMemory("greetings-verify");
-        Map<String, String> props2 = InMemoryConnector.switchOutgoingChannelsToInMemory("greetings-valid");
-        Map<String, String> props3 = InMemoryConnector.switchOutgoingChannelsToInMemory("greetings-invalid");
+        Map<String, String> props1 = InMemoryConnector.switchIncomingChannelsToInMemory("greeting-submissions");
+        Map<String, String> props2 = InMemoryConnector.switchOutgoingChannelsToInMemory("greetings-verified");
 
         env.putAll(props1);
         env.putAll(props2);
-        env.putAll(props3);
         return env;
     }
 

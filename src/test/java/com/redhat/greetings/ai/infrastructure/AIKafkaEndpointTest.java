@@ -22,7 +22,7 @@ public class AIKafkaEndpointTest {
     @Test
     public void testMessagingWithInvalidGreeting() {
 
-        InMemorySource<GreetingDTO> greetingsVerify = connector.source("greetings-verify");
+        InMemorySource<GreetingDTO> greetingsVerify = connector.source("greeting-submissions");
         InMemorySink<GreetingDTO> verifiedResults = connector.sink("greetings-verified");
 
 
